@@ -1,4 +1,3 @@
-
 class Parking:
     TYPE_ORDINARY_CAR = 1
     TYPE_TRUCK_CAR = 2
@@ -29,13 +28,21 @@ class Parking:
             raise ValueError("Error value hours!")
 
         if type(self.price_of_hour) not in [int, float]:
-            raise ValueError("Error value price_of_hour!")
+            raise ValueError("Error value !")
 
         if type(self.coeff_for_municipal_car) not in [int, float]:
             raise ValueError("Error value coeff_for_municipal_car!")
 
         if hours <= 0:
             raise ValueError("The number of hours should be more null!")
+
+        if self.price_of_hour <= 0:
+            raise ValueError("The number of price_of_hour should be more null!")
+
+        if self.coeff_for_municipal_car <= 0:
+            raise ValueError("The number of coeff_for_municipal_car should be more null!")
+
+        # ----------------------------------
 
         _text = "Price park: %f"
         if self.type_car == 1:
@@ -45,5 +52,4 @@ class Parking:
             print(_text % round((self.price_of_hour * self.dimensions * hours)))
 
         elif self.type_car == 3:
-            print(_text % round((self.price_of_hour * self.coeff_dor_municipal_car * hours)))
-
+            print(_text % round((self.price_of_hour * self.coeff_for_municipal_car * hours)))
