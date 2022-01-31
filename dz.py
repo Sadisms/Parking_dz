@@ -5,7 +5,7 @@ class Parking:
     TYPE_MUNICIPAL_CAR = 3
 
     price_of_hour = 100
-    coeff_dor_municipal_car = 0.8
+    coeff_for_municipal_car = 0.8
 
     def __init__(self, type_car, dimensions=None):
         if type_car not in [
