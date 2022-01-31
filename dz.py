@@ -28,6 +28,12 @@ class Parking:
         if type(hours) not in [int, float]:
             raise ValueError("Error value hours!")
 
+        if type(self.price_of_hour) not in [int, float]:
+            raise ValueError("Error value price_of_hour!")
+
+        if type(self.coeff_for_municipal_car) not in [int, float]:
+            raise ValueError("Error value coeff_for_municipal_car!")
+
         if hours <= 0:
             raise ValueError("The number of hours should be more null!")
 
